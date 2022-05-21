@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+body {
+  background: rgba(77, 77, 77, 0.893);
+  text-align: center;
+  overflow: hidden;
+  min-height: 100vh;
+  cursor: crosshair;
+}
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: rgba(255, 166, 0, 0.955);
+  opacity: 0;
+  animation: anim 13s forwards;
+  filter: hue-rotate(0deg);
+  z-index: 0;
+}
+@keyframes anim {
+  to {
+    top: -250%;
+    left: var(--left);
+    opacity: 1;
+    filter: hue-rotate(720deg);
+  }
+}
+
+button {
+  margin-top: 20px;
+  padding: 8px 14px;
+  color: grey;
+  background: white;
+  border-radius: 20px;
+  border: none;
+}
+button:hover {
+  background: white;
+}
+
+.timer {
+  font-size: 2rem;
+  color: white;
+  user-select: none;
+  visibility: hidden;
+  width: 240px;
+  margin: 10px auto 0;
+  opacity: 0;
+  transform: translateX(-500px);
+  height: 80px;
+}
+
+.show-timer {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 4s;
+}
+
+.hidden-timer {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(+500px);
+  transition: 4s;
+}
+
+.titre {
+  top: 50%;
+}
+
+h3 {
+  font-size: 10rem;
+  text-align: center;
+  margin-top: 60px;
+  color: white;
+  user-select: none;
+}
